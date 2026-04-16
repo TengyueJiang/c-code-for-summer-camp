@@ -1,0 +1,31 @@
+vector 1.push_back（）插入元素
+       2.pop_back() 弹出最后的元素 如【1，2，3，4】如果pop_back（）就成为了【1，2，3】
+       3.clear（）把整个数组清空
+       4.resize()  重新调整数组大小
+stack  1.push（） 压入栈
+       2.pop（） 出栈
+       3.不能访问元素比如stk【k】不可以的
+queue  1.不能访问元素比如q【k】不可以的
+堆priority_queue     1.默认大根堆
+                     2.priority_queue<int,vector<int>,greater<int>> 小根堆
+set （集合）   1.insert() 插入某一个数值
+              2.erase() 删除某一个数值
+              3.find(1) 
+              4.count(1) 数值是1的有几个
+pair          1.pair<pair<int,char>,char> 三元组
+
+为什么要有迭代器：有些数据结构并非线性，下标可能非线性，但迭代器是线性增加的
+利用迭代器输出
+for(vector<int>::iterator i=a.begin();i!=a.end();++i) cout<<*i<<" ";
+迭代器相减得到的是整型
+
+算法：
+algorithm 1.swap（a,b）交换
+          2.sort（，，cmp）
+                          bool cmp(pair<int,int> a,pair<int,int> b){
+                            if(a.second!=b.second)
+                               return a.second<b.second;
+                            return a.first>b.first;
+                          }
+          3.unique（a.begin(),a.end()）消除数组中相邻的重复元素 比如【1，1，5，6，7，8】使用之后就是【1，5，6，7，8】
+          可以进行去重 a.erase(unique（a.begin(),a.end()）,a.end())
